@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <button onclick="loginpage()"><img src="https://cdn-icons-png.freepik.com/256/11560/11560392.png?ga=GA1.1.1325063738.1703091014&" alt="" width="50px"></button> 
+   <button onclick="createpage()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbbeygWfnmtVhzzOdmBXGGbb_0ZIWXJ0gnRqxLqID_YQ&s" alt="" width="50px" ></button> 
+  <button onclick="newwindow()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMi5sgHbE9iAgVuTw9LuGdZU0-Zym74HbsWsSy2mh5pQ&s" alt="" width="50px"></button>
+  <script>
+    let myWindow;
+    let windowProps = "window=300, height=200, top=100, left=400, toolbar=yes, scrollable=yes, resizable=yes"
+    function loginpage(){
+    myWindow = window.open('./logincredential.html', "", windowProps )
+    }
+    function createpage(){
+        myWindow = window.open('./create.html', "", windowProps)
+    }
+    function newwindow(){
+        myWindow = window.open('./example.html', "")
+    }
+  </script>
+</body>
+</html>

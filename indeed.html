@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+        #result{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        .container{
+           width: 400px;
+           margin-bottom: 20px;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 0 20px #ccc;
+        }
+        .container h1{
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .card1{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 5px;
+        }
+        .fa-bookmark{
+            font-size: 20px;
+        }
+        .card2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card2 h4{
+            font-size: 1rem;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+        .fa-ban{
+            font-size: 20px;
+        }
+        button{
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            outline: none;
+           margin-bottom: 5px;
+           cursor: pointer;
+        }
+        small{
+            font-size: 1rem;
+          margin-left: 5px;
+            display: flex;
+        }
+        .arrow{
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        h3{
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        @media(max-width:768px){
+            .container{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+         <h1 style="color: rgb(52, 52, 173); margin-bottom: 10px; font-size: 2.1rem; font-weight: 600; font-style:oblique; text-decoration:underline;">Indeed</h1>
+    </div>
+
+    <script>
+        let result = document.querySelector("#result")
+        let Naukri = [
+            {
+                JobRole : "Mastering Technician",
+                Company : "PREMIER DIGITAL SERVICES,Ltds",
+                Location:"Bangalore Urban District, Karnataka",
+                Salary:"₹32,000 - ₹50,000",
+                Shiftwise:"Full-time",
+                Posted:"30 +days ago",
+           },
+          
+           {
+            JobRole : "B2B Sales Executive",
+                Company : "GoL Ventures PVt. LIMITED",
+                Location:"Bangalore, Karnataka",
+                Salary:"₹20,000 - ₹25,000",
+                Shiftwise:"Full-time",
+                Posted:"Posted 14 days ago",
+           },
+           {
+            JobRole : "Sales Telecaller",
+                Company : "Deltax",
+                Location:"HSR Layout, Bangalore, Karnataka",
+                Salary:"₹8,829,09 - ₹15,000.00 a month",
+                Shiftwise:"Full-time",
+                Posted:"Active 2 days ago",
+           },
+          
+           {
+            JobRole : "Customer Service Representative",
+                Company : "Buzzworks Buisness Services Pvt Ltd",
+                Location:"Bengaluru, Karnataka",
+                Salary:"₹25,000 - ₹50,0000",
+                Shiftwise:"Full-time",
+                Posted:"Easily apply",
+           },
+           {
+            JobRole : "Loader/Unloader",
+                Company : "Rightbout Technologies Private LIMITED",
+                Location:"Bengaluru, Karnataka",
+                Salary:"₹25,000 - ₹50,0000",
+                Shiftwise:"Monday to Friday",
+                Posted:"Today",
+           },
+           {
+            JobRole : "Helpers",
+                Company : "Advesebee Innovations Private LIMITED",
+                Location:"Tavarekere, Bengaluru, Karnataka",
+                Salary:"₹10,000 - ₹35,0000",
+                Shiftwise:"Full-time",
+                Posted:"Just posted",
+           },
+           {
+            JobRole : "Picker/Packer",
+                Company : "Adhaan Solution  Private LIMITED",
+                Location:"HSR Layout,Bengaluru, Karnataka",
+                Salary:"₹18,000 - ₹20,0000",
+                Shiftwise:"Monday to Friday",
+                Posted:"Just posted",
+           },
+           {
+            JobRole : "Cashier",
+                Company : "Rightbout Technologies Private LIMITED",
+                Location:"Bengaluru, Karnataka",
+                Salary:"₹22,000 - ₹28,0000",
+                Shiftwise:"Full-time",
+                Posted:"Today",
+           },
+           {
+            JobRole : "Graphic Designer & Video Editor",
+                Company : "virgo communications and exhibitions Private Limited",
+                Location:"Bengaluru, Karnataka",
+                Salary:"₹30,000 - ₹35,0000",
+                Shiftwise:"Monday to Friday",
+                Posted:"Posted & days ago",
+           },
+           {
+            JobRole : "International Sales - BOM (Bangalore)",
+                Company : "PURE TRUHERB PRIVATED LIMITED",
+                Location:"Bangalore, Karnataka",
+                Salary:"₹35,000 - ₹50,000",
+                Shiftwise:"Full-time",
+                Posted:"Active Today",
+           },
+           {
+            JobRole : "Staff Nurse-Medical/Surgical/Casualty",
+                Company : "GoL Ventures PVt. LIMITED",
+                Location:"Republic Hospital Bengaluru, Karnataka",
+                Salary:"₹25,000 - ₹50,0000",
+                Shiftwise:"Full-time",
+                Posted:"Active 2 days ago",
+           },
+        ]
+        Naukri.map((item, index)=>{
+           result.innerHTML += `
+           <div class = "container">
+            <div class = "card1">
+           <h1>${item.JobRole}</h1>
+           <i class="fa-regular fa-bookmark"></i>
+           </div>
+           <div class = "card2">
+           <h4>${item.Company}</h4>
+           <i class="fa-solid fa-ban"></i>
+           </div>
+           <small>${item.Location}</small><br>
+           <button>${item.Salary}</button><br>
+           <button>${item.Shiftwise}</button><br>
+           <div class = "arrow">
+           <i class="fa-solid fa-arrow-right" style="color: #075ced; margin-top:4px"></i><h3>${item.Posted}</h3>
+           </div>
+           </div>
+     ` 
+        })
+    </script>
+</body>
+</html>
